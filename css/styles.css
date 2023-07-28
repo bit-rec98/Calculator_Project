@@ -4,9 +4,21 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Color Palette */
+/* 
+
+#387d7a 
+#1d201f
+#AB92BF
+#B8B8D1
+*/
+
+
 body{
     scroll-behavior: smooth;
     font-family: 'Inter', sans-serif;
+    position: relative;
 }
 header{
     display: flex;
@@ -14,7 +26,7 @@ header{
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 16px;
-    background: #387d7a;
+    background: linear-gradient(to bottom, rgba(171, 146, 191, 0.9), rgba(144, 57, 215, 0.8), rgba(56, 125, 122, 0.7));
 }
 
 h1, p{
@@ -22,6 +34,7 @@ h1, p{
 }
 
 h1{
+    font-weight: 400;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -41,10 +54,9 @@ nav{
 nav a, footer a{
     text-decoration: none;
     padding: 12px;
-    background: #B8B8D1;
+    background: rgba(166, 79, 206, 0.3);
     margin: 0 8px;
     color: #1d201f;
-    border: 1px solid #1d201f;
     border-radius: 8px;
     display: flex;
     flex-direction: row;
@@ -52,30 +64,23 @@ nav a, footer a{
     align-items: center;
 }
 
-footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-footer div{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+nav a:hover, footer a:hover{
+    background: rgba(166, 79, 206, 0.9);
 }
 
 nav button{
     padding: 16px;
-    background: #AB92BF;
     border-radius: 8px;
     font-size: 16px;
 }
 
 main{
+    position: relative;
     background: #AB92BF;
-    padding: 128px;
+    background-image: url(../Assets/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 64px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -83,25 +88,27 @@ main{
 }
 
 .container{
-    background:#B8B8D1;
+    background:linear-gradient(to bottom, rgba(171, 146, 191, 0.7), rgba(56, 125, 122, 0.7), rgba(144, 57, 215, 0.7));
     border: 1px solid #1d201f;
-    border-radius: 16px;
+    border-radius: 64px;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 32px;
+}
+
+.container .pad{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
     grid-gap: 8px;
-    max-width: 380px;
-    margin: 0 auto;
-    padding: 32px;
-    
 }
 
-.container div{
+.container .pad > div{
     margin: 0 auto;
-    background: white;
+    background: rgba(255, 255, 255, 0.8);
     width: 72px;
     height: 72px;
     border: 1px solid #1d201f;
@@ -114,35 +121,51 @@ main{
     font-size: 16px;
 }
 
-.output{
-    background: #B8B8D1;
+#output{
+    background: rgba(255, 255, 255, 0.9);
     border: 1px solid #1d201f;
-    border-radius: 16px;
+    border-radius: 32px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    font-weight: 500;
     max-height: 128px;
-    width: 30%;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 16px;
 }
 
-.output div{
-    background: white;
-    border: 1px solid #1d201f;
-    border-radius: 8px;
-    margin: 8px;
-    padding: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+main .background-container{
+    position: absolute;
     width: 100%;
-    height: 80%;
+    z-index: 1;
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+main .background-container .background-item{
+    font-size: 16px;
+    font-weight: 400;
 }
 
 footer{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding: 16px;
-    background: #387d7a;
+    background: linear-gradient(to bottom, rgba(171, 146, 191, 0.7), rgba(144, 57, 215, 0.8), rgba(56, 125, 122, 0.9));
+    font-weight: 500;
+}
+
+footer div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
